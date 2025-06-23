@@ -1,0 +1,19 @@
+Problema 1: Sistema de Biblioteca y Gestión de Préstamos de Libros 
+ 
+Una biblioteca desea implementar un sistema básico y orientado a objetos, para gestionar su colección de 
+libros y permitir préstamos y devoluciones de los mismos. Para ello, se deben definir las clases necesarias 
+para representar los libros individuales y la biblioteca que los contiene. 
+1) Para los libros, se debe considerar su título (cadena), autor (cadena), y una marca de disponible  
+(booleano, por defecto True). De tal forma que al hacer la acción de prestar dicho libro,  si está disponible, 
+lo marca como no disponible y devuelve True. En caso contrario, devuelve False.  Y, cuando se haga la 
+acción de devolver el libro se marca como disponible. 
+ 
+2) Para la Biblioteca, que tenga una lista de objetos libros. Y, que permita: 
+a) agregar un libro a la colección 
+b) buscar un libro por título y, si está disponible, lo presta. 
+c) buscar un libro por título. 
+Objetivo del problema: 
+Implementar correctamente las clases siguiendo los principios de la programación orientada a objetos, 
+utilizando adecuadamente los métodos y atributos, para modelar un sistema funcional de préstamos y 
+devoluciones. 
+Sección de Autoevaluaci
