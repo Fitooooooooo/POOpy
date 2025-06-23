@@ -1,0 +1,33 @@
+Problema 2: Sistema de Reserva de Hotel 
+ 
+Una cadena hotelera desea automatizar el proceso de reserva de habitaciones para sus clientes. Para ello, se 
+requiere desarrollar un sistema básico de reservas utilizando los conceptos de clases, atributos, y métodos, 
+respetando el paradigma de programación orientada a objetos. 
+Se deben modelar los siguientes elementos: 
+1. Cada habitación del hotel está identificada por un número y puede estar ocupada o disponible. 
+2. Cada cliente tiene un nombre y, eventualmente, puede tener una reserva de habitación asociada. 
+El sistema debe permitir: 
+- Reservar una habitación solo si se encuentra disponible. 
+- Asociar correctamente una habitación reservada al cliente. 
+- Liberar una habitación (marcarla como disponible nuevamente). 
+Requerimientos específicos: 
+1. En relación a la habitación, ésta contempla: 
+- Un número que la identifica. 
+- Una marca que indique si la habitación está actualmente ocupada (inicialmente debe estar libre). 
+- Al reservarla, que: 
+  - Se marque la habitación como ocupada si estaba libre. 
+  - Devuelva True si la reserva fue exitosa y False si ya estaba ocupada. 
+ - Al liberar la habitación, se marque como disponible nuevamente. 
+ 
+2. En relación al Cliente: 
+- Que se identifique por su nombre. 
+- Vincularle la habitación que se le ha asignado, o None si aún no tiene ninguna. 
+- Que al hacer la reserva de la habitación, que: 
+  - Intente reservar la habitación indicada por la persona que administra la aplicación. 
+  - Si la reserva es exitosa, asignar la habitación al cliente y retorne un mensaje del tipo: 
+    "Habitación 101 reservada para Juan" 
+  - Si no es posible realizar la reserva, retorne: 
+    "No se pudo reservar". 
+3. Simula el siguiente escenario: 
+- Crear una habitación con número 101. 
+- Crear un cliente llamado "Juan". 
