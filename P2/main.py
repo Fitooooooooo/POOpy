@@ -81,3 +81,31 @@ class Cliente:
         else:
             return "No se pudo reservar"
 
+# --- Sección de Simulación para la Clase Habitacion ---
+# --- ✅ : Resultado bueno   ❌: Resultado malo---
+if __name__ == "__main__":
+    print("--- Probando la clase Habitacion ---")
+
+    # 1. Crear una habitación. Su estado inicial debe ser "Disponible".
+    h101 = Habitacion(101)
+    print(f"Estado inicial: {h101}")
+
+    # 2. Intentar reservar la habitación. Debe ser exitoso y el estado cambiar a "Ocupada".
+    print("\nIntentando primera reserva...")
+    if h101.reservar():
+        print("✅ Reserva exitosa (el método devolvió True).")
+    else:
+        print("❌ Fallo inesperado en la reserva.")
+    print(f"Estado después de la reserva: {h101}")
+
+    # 3. Intentar reservar la misma habitación de nuevo. Debe fallar.
+    print("\nIntentando segunda reserva en la misma habitación...")
+    if h101.reservar():
+        print("❌ Error: La habitación se pudo reservar dos veces.")
+    else:
+        print("✅ Correcto: La reserva falló (el método devolvió False) porque ya estaba ocupada.")
+
+    # 4. Liberar la habitación. El estado debe volver a "Disponible".
+    print("\nLiberando la habitación...")
+    h101.liberar()
+    print(f"Estado final: {h101}")
