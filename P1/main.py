@@ -98,6 +98,7 @@ class Biblioteca:
             titulo: El título del libro a prestar.
 
         Returns:
+
             True si el préstamo fue exitoso, False en caso contrario (no se encontró o no estaba disponible).
         """
         libro_a_prestar = self.buscar_libro(titulo)
@@ -108,3 +109,87 @@ class Biblioteca:
             # Si el libro no se encuentra, el préstamo no puede realizarse
             return False
 
+# --- Sección de Demostración ---
+if __name__ == "__main__":
+    # 1. Crear una instancia de la Biblioteca
+    mi_biblioteca = Biblioteca()
+    print("--- Biblioteca creada. ---")
+
+    # 2. Crear y agregar algunos libros a la colección
+    libro1 = Libro("Cien Años de Soledad", "Gabriel García Márquez")
+    libro2 = Libro("El Señor de los Anillos", "J.R.R. Tolkien")
+    libro3 = Libro("1984", "George Orwell")
+
+    mi_biblioteca.agregar_libro(libro1)
+    mi_biblioteca.agregar_libro(libro2)
+    mi_biblioteca.agregar_libro(libro3)
+
+    print("\n--- Estado inicial de la colección: ---")
+    for libro in mi_biblioteca.coleccion:
+        print(libro)
+
+    # 3. Demostrar el préstamo de un libro disponible
+    print("\n--- Intentando prestar 'El Señor de los Anillos'... ---")
+    titulo_a_prestar = "El Señor de los Anillos"
+    if mi_biblioteca.prestar_libro(titulo_a_prestar):
+        print(f"✅El libro '{titulo_a_prestar}' ha sido prestado.")
+    else:
+        print(f"❌No se pudo prestar el libro '{titulo_a_prestar}'.")
+
+    # 4. Verificar el estado del libro después del préstamo
+    print("\n--- Estado de la colección después del primer préstamo: ---")
+    # Usamos el método de búsqueda para ver un libro en específico
+    libro_prestado = mi_biblioteca.buscar_libro(titulo_a_prestar)
+    print(f"Búsqueda: {libro_prestado}")
+
+    # 5. Intentar prestar el mismo libro de nuevo (debería fallar)
+    print(f"\n--- Intentando prestar '{titulo_a_prestar}' de nuevo... ---")
+    if mi_biblioteca.prestar_libro(titulo_a_prestar):
+        # Este caso sería un error en nuestra lógica, pero es bueno manejarlo.
+        print(f"❌El libro '{titulo_a_prestar}' se pudo prestar dos veces.")
+    else:
+        # Este es el resultado que esperamos.
+        print(f"✅El libro '{titulo_a_prestar}' no se pudo prestar de nuevo, como se esperaba.")
+
+    # 6. Devolver el libro
+    print(f"\n--- Devolviendo '{titulo_a_prestar}'... ---")
+    libro_devuelto = mi_biblioteca.buscar_libro(titulo_a_prestar)
+    if libro_devuelto:
+        libro_devuelto.devolver()
+        print(f"✅El libro '{titulo_a_prestar}' ha sido devuelto.")
+        print(f"   Estado actual: {libro_devuelto}")
+    else:
+        # Manejamos el caso en que el libro a devolver no se encuentre.
+        print(f"❌No se encontró el libro '{titulo_a_prestar}' para devolverlo.")
+
+    # 7. Verificacion de errores o acciones inesperadas
+    print("\n--- Verificando el estado de la colección después de la devolución: ---") 
+    print("Estado de la colección:")
+    for libro in mi_biblioteca.coleccion:
+        print(libro)
+    
+    print("\n--- Prestaremos un libro ---")
+    titulo_a_prestar = "El Señor de los Anillos"
+    if mi_biblioteca.prestar_libro(titulo_a_prestar):
+        print(f"✅El libro '{titulo_a_prestar}' ha sido prestado.")
+    else:
+        print(f"❌No se pudo prestar el libro '{titulo_a_prestar}'.")
+
+    print("\n--- Volver a prestar el mismo libro ---")
+    titulo_a_prestar = "El Señor de los Anillos"
+    if mi_biblioteca.prestar_libro(titulo_a_prestar):
+        print(f"✅El libro '{titulo_a_prestar}' ha sido prestado.")
+    else:
+        print(f"❌No se pudo prestar el libro '{titulo_a_prestar}'.")
+
+    
+    # 8. Devolver un libro no registrado
+    titulo_a_prestar = "El Hobbit"
+    print("\n--- Intentando devolver un libro no registrado ---")
+    print(f"Intentando devolver '{titulo_a_prestar}'...")
+    libro_devuelto = mi_biblioteca.buscar_libro(titulo_a_prestar)
+    if libro_devuelto:
+        libro_devuelto()
+        print(f"✅El libro {titulo_a_prestar} ha sido devuelto.")
+    else:
+        print(f"❌No se encontró el libro {titulo_a_prestar} para devolverlo.")
