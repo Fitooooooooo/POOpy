@@ -1,0 +1,30 @@
+Problema 3: Sistema de Gestión de Inscripciones en una Universidad 
+ 
+Una universidad desea implementar un sistema básico que le permita registrar estudiantes e inscribirlos en 
+distintos cursos. Para ello, se requiere modelar el comportamiento de los estudiantes y los cursos utilizando 
+programación orientada a objetos. 
+Requisitos: 
+1. En relación a los cursos: 
+ - Deben tener el nombre del curso(str), y los estudiantes inscritos en dicho curso (lista de objetos de 
+estudiantes). 
+ - Inscribir estudiantes, agregando el estudiante a la lista de inscritos. 
+2. En relación a los estudiantes: 
+ - Se deben identificar por su nombre, y los cursos en los que está inscrito (lista de objetos curso). 
+ - Permitir la acción de inscribirse en un curso, agregando el curso a la lista del estudiante. 
+Actividades requeridas: 
+a) Implementar las clases correspondientes respetando las relaciones bidireccionales entre estudiantes y 
+cursos. 
+b) Crear al menos tres cursos y cuatro estudiantes, e inscribir a los estudiantes en distintos cursos. 
+c) Imprimir por pantalla: 
+    - Los cursos a los que está inscrito cada estudiante. 
+    - Los nombres de los estudiantes inscritos en cada curso. 
+Consideraciones adicionales: 
+ - Asegurarse de mantener la coherencia entre las clases. 
+ - Evitar inscripciones duplicadas (opcional). 
+ - Utilizar comprensiones de listas o bucles for para imprimir la información. 
+Autoevaluación sugerida: 
+1. ¿Qué relación existe entre las clases creadas? ¿Cómo se refleja en el código? 
+2. ¿Cómo se garantiza la consistencia entre la lista de cursos de un estudiante y la lista de inscritos de un 
+curso? 
+3. ¿Qué modificaciones haría al sistema si un estudiante quisiera darse de baja de un curso? 
+4. ¿Cómo evitaría inscripciones duplicadas de un estudiante en un mismo curso? 
