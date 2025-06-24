@@ -1,0 +1,44 @@
+Problema 4: Simulación de un Cajero Automático  
+ 
+Una entidad bancaria desea simular el funcionamiento básico de un cajero automático, centrado en la 
+operación de retiros de dinero desde cuentas bancarias. Para ello, se requiere el diseño de un sistema basado 
+en Programación Orientada a Objetos que incluya: 
+ 
+- Clientes que poseen cuentas bancarias, identificadas por un número de cuenta y un saldo disponible. 
+- Un cajero automático, que realiza la operación de retiro de dinero desde una cuenta, siempre y cuando 
+existan fondos suficientes. 
+ 
+Especificaciones del sistema 
+ 
+1. Sobre la cuenta bancaria: 
+   - Que tenga un número identificador de la cuenta (tipo cadena) y un saldo actual disponible en la cuenta 
+(tipo numérico). 
+  - Que al retirar una cantidad de dinero verifique si el saldo disponible es suficiente. Si el retiro es exitoso, 
+descontar la cantidad del saldo y devuelve True. Si no hay fondos suficientes, devuelve False. 
+ 
+2. En relación al cajero: 
+   - Que permita hacer retiros basado en la cuenta y monto. Utiliza la cuenta bancaria para intentar realizar el 
+retiro. Devolver  un mensaje indicando si el retiro fue exitoso y cuál es el nuevo saldo, o si hubo fondos 
+insuficientes. 
+ 
+Objetivo del estudiante 
+Implementar correctamente las clases, garantizando la interacción entre ellas y simulando una operación de 
+retiro desde una cuenta bancaria usando un cajero automático. 
+Requisitos adicionales para la evaluación 
+ 
+1. Agregar al menos dos cuentas bancarias diferentes con saldos distintos. 
+2. Simular al menos tres operaciones de retiro, incluyendo: 
+   - Un retiro exitoso. 
+   - Un intento de retiro con monto mayor al saldo disponible. 
+   - Un retiro que reduzca el saldo a cero. 
+3. Mostrar por pantalla los mensajes generados por cada operación de retiro. 
+4. Agregar una función mostrar_saldo(cuenta) que imprima el número de cuenta y su saldo actual. 
+5. (Opcional) Extender la funcionalidad de la cuenta bancaria para registrar un historial de retiros realizados. 
+ 
+Actividades de autoevaluación 
+ 
+1. ¿Qué sucede si intenta retirar más dinero del que hay en la cuenta? 
+2. ¿Cómo se produce la colaboración entre el cajero y la cuenta bancaria? 
+3. ¿Qué responsabilidad tiene cada clase en el diseño orientado a objetos? 
+4. ¿Sería posible adaptar este sistema para incluir depósitos? ¿Qué cambios haría?  
+5. ¿El código está bien organizado y documentado? 

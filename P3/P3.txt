@@ -28,3 +28,6 @@ Autoevaluación sugerida:
 curso? 
 3. ¿Qué modificaciones haría al sistema si un estudiante quisiera darse de baja de un curso? 
 4. ¿Cómo evitaría inscripciones duplicadas de un estudiante en un mismo curso? 
+5. ¿Podría identificar si este sistema permite fácilmente agregar más atributos, como un ID de curso o una 
+nota final? Justifique su respuesta. 
+6. ¿El código está bien organizado y documentado? 
