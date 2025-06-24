@@ -81,31 +81,53 @@ class Cliente:
         else:
             return "No se pudo reservar"
 
-# --- Sección de Simulación para la Clase Habitacion ---
-# --- ✅ : Resultado bueno   ❌: Resultado malo---
+    def liberar_reserva(self) -> str:
+        """
+        Libera la habitación asignada al cliente, si es que tiene una.
+        Esto actualiza tanto el estado de la habitación como el del cliente.
+
+        Returns:
+            Un mensaje indicando el resultado de la operación.
+        """
+        if self.habitacion_asignada:
+            numero_habitacion = self.habitacion_asignada.numero
+            self.habitacion_asignada.liberar()
+            self.habitacion_asignada = None
+            return f"Reserva de la habitación {numero_habitacion} liberada por {self.nombre}."
+        else:
+            return f"{self.nombre} no tiene ninguna habitación para liberar."
+
+    def __repr__(self) -> str:
+        """Devuelve una representación en cadena del cliente y su reserva."""
+        if self.habitacion_asignada:
+            return f"Cliente('{self.nombre}', Habitación: {self.habitacion_asignada.numero})"
+        else:
+            return f"Cliente('{self.nombre}', Sin reserva)"
+
+# --- Sección de Simulación del Sistema Completo ---
 if __name__ == "__main__":
-    print("--- Probando la clase Habitacion ---")
+    print("--- Simulación del Sistema de Reservas de Hotel ---")
 
-    # 1. Crear una habitación. Su estado inicial debe ser "Disponible".
+    # 1. Crear una habitación y un cliente, como pide el escenario.
     h101 = Habitacion(101)
-    print(f"Estado inicial: {h101}")
+    cliente_juan = Cliente("Juan")
+    print(f"Situación inicial: {h101}, {cliente_juan}")
 
-    # 2. Intentar reservar la habitación. Debe ser exitoso y el estado cambiar a "Ocupada".
-    print("\nIntentando primera reserva...")
-    if h101.reservar():
-        print("✅ Reserva exitosa (el método devolvió True).")
-    else:
-        print("❌ Fallo inesperado en la reserva.")
-    print(f"Estado después de la reserva: {h101}")
+    # 2. Juan reserva la habitación disponible.
+    print("\n--- Juan intenta reservar la habitación 101 ---")
+    mensaje = cliente_juan.hacer_reserva(h101)
+    print(f"Resultado: {mensaje}")
+    print(f"Situación después de la reserva: {h101}, {cliente_juan}")
 
-    # 3. Intentar reservar la misma habitación de nuevo. Debe fallar.
-    print("\nIntentando segunda reserva en la misma habitación...")
-    if h101.reservar():
-        print("❌ Error: La habitación se pudo reservar dos veces.")
-    else:
-        print("✅ Correcto: La reserva falló (el método devolvió False) porque ya estaba ocupada.")
+    # 3. Un segundo cliente intenta reservar la misma habitación (debe fallar).
+    print("\n--- Ana intenta reservar la habitación 101 (ya ocupada) ---")
+    cliente_ana = Cliente("Ana")
+    mensaje_ana = cliente_ana.hacer_reserva(h101)
+    print(f"Resultado para Ana: {mensaje_ana}")
+    print(f"Situación (no debe cambiar): {h101}, {cliente_ana}")
 
-    # 4. Liberar la habitación. El estado debe volver a "Disponible".
-    print("\nLiberando la habitación...")
-    h101.liberar()
-    print(f"Estado final: {h101}")
+    # 4. Juan libera su habitación.
+    print("\n--- Juan libera su reserva ---")
+    mensaje_liberar = cliente_juan.liberar_reserva()
+    print(f"Resultado: {mensaje_liberar}")
+    print(f"Situación final: {h101}, {cliente_juan}")
