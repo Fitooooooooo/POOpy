@@ -21,6 +21,7 @@ class CuentaBancaria:
         """
         self.numero_cuenta = numero_cuenta
         self.saldo = saldo_inicial
+        self.historial_retiros: list[float] = [] # (Opcional) Para guardar el historial
 
     def retirar(self, monto: float) -> bool:
         """
@@ -34,8 +35,18 @@ class CuentaBancaria:
         """
         if monto > 0 and self.saldo >= monto:
             self.saldo -= monto
+            self.historial_retiros.append(monto) # (Opcional) Registrar el retiro
             return True
         return False
+
+    def ver_historial(self):
+        """Muestra el historial de retiros de la cuenta."""
+        print(f"\n--- Historial de Retiros para la cuenta {self.numero_cuenta} ---")
+        if not self.historial_retiros:
+            print("No se han realizado retiros.")
+        else:
+            for i, monto in enumerate(self.historial_retiros, 1):
+                print(f"  {i}. Retiro: ${monto:,.2f}")
 
     def __repr__(self) -> str:
         return f"Cuenta(Nº: {self.numero_cuenta}, Saldo: ${self.saldo:,.2f})"
@@ -87,17 +98,22 @@ if __name__ == "__main__":
     # 2. Simular tres operaciones de retiro
     print("\n--- Operaciones de Retiro ---")
 
-    # a) Retiro exitoso
+    # Retiro exitoso
     print("\n1. Retiro exitoso de $10,000 de la cuenta 1:")
     print(cajero.realizar_retiro(cuenta1, 10000.0))
     mostrar_saldo(cuenta1)
 
-    # b) Intento de retiro con monto mayor al saldo
+    # Intento de retiro con monto mayor al saldo
     print("\n2. Intento de retiro de $20,000 de la cuenta 2 (saldo $15,000):")
     print(cajero.realizar_retiro(cuenta2, 20000.0))
     mostrar_saldo(cuenta2)
 
-    # c) Retiro que reduce el saldo a cero
+    # Retiro que reduce el saldo a cero
     print("\n3. Retiro de $15,000 de la cuenta 2 para dejar saldo en cero:")
     print(cajero.realizar_retiro(cuenta2, 15000.0))
     mostrar_saldo(cuenta2)
+
+    # 5. Mostrar el historial de retiros
+    print("\n" + "="*40)
+    cuenta1.ver_historial()
+    cuenta2.ver_historial()
