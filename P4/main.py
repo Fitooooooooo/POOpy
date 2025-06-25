@@ -39,6 +39,16 @@ class CuentaBancaria:
             return True
         return False
 
+    def depositar(self, monto: float):
+        """
+        Deposita un monto en la cuenta.
+
+        Args:
+            monto: La cantidad de dinero a depositar.
+        """
+        if monto > 0:
+            self.saldo += monto
+
     def ver_historial(self):
         """Muestra el historial de retiros de la cuenta."""
         print(f"\n--- Historial de Retiros para la cuenta {self.numero_cuenta} ---")
@@ -67,10 +77,24 @@ class CajeroAutomatico:
         Returns:
             Un mensaje de estado indicando el resultado de la operación.
         """
-        if cuenta.retirar(monto):
-            return f"Retiro exitoso. Nuevo saldo: ${cuenta.saldo:,.2f}"
-        else:
+        if not cuenta.retirar(monto):
             return f"Fondos insuficientes. No se pudo completar el retiro de ${monto:,.2f}."
+        else:
+            return f"Retiro exitoso. Nuevo saldo: ${cuenta.saldo:,.2f}"
+
+    def realizar_deposito(self, cuenta: CuentaBancaria, monto: float) -> str:
+        """
+        Procesa un depósito en una cuenta específica.
+
+        Args:
+            cuenta: La cuenta bancaria en la que se depositará el dinero.
+            monto: El monto a depositar.
+
+        Returns:
+            Un mensaje de estado indicando el resultado de la operación.
+        """
+        cuenta.depositar(monto)
+        return f"Depósito exitoso. Nuevo saldo: ${cuenta.saldo:,.2f}"
 
 
 def mostrar_saldo(cuenta: CuentaBancaria):
@@ -117,3 +141,18 @@ if __name__ == "__main__":
     print("\n" + "="*40)
     cuenta1.ver_historial()
     cuenta2.ver_historial()
+
+    # --- Simulación de Depósitos ---
+    print("\n--- Simulando Depósitos ---")
+    print("\n--- Saldos Iniciales ---")
+    mostrar_saldo(cuenta1)
+    mostrar_saldo(cuenta2)
+
+    # 6. Simular un depósito")
+    print("\n1. Depósito de $20,000 en la cuenta 1:")
+    print(cajero.realizar_deposito(cuenta1, 20000.0))
+    mostrar_saldo(cuenta1)
+    
+    print("\n2. Depósito de $5,000 en la cuenta 2:")
+    print(cajero.realizar_deposito(cuenta2, 5000.0))
+    mostrar_saldo(cuenta2)
