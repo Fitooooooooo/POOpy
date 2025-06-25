@@ -1,0 +1,35 @@
+Problema 5: Sistema de Gestión de Evaluación Académica de Estudiantes  
+ 
+Un profesor desea implementar un sistema simple de evaluación académica para registrar y calcular el 
+desempeño de sus estudiantes en distintos exámenes. 
+ 
+Se requiere modelar los siguientes elementos utilizando programación orientada a objetos: 
+ - Cada examen debe abarcar: 
+  - El tema evaluado (por ejemplo, 'POO', 'Bases de Datos', etc.). 
+  - La nota obtenida, representada como un número entre 1.0 y 7.0. 
+ - Para cada estudiante se debe considerar: 
+  - Un nombre que lo identifique. 
+  - Una lista de exámenes rendidos. 
+  - La posibilidad de: 
+    - Agregar un examen a su historial académico. 
+    - Calcular su promedio general de notas a partir de los exámenes rendidos. 
+Requerimientos 
+1. Crea una clase `Examen` que reciba el tema y la nota. 
+2. Por cada estudiante considerar que: 
+   - Reciba el nombre al momento de su creación. 
+   - Mantenga internamente una lista de exámenes rendidos. 
+   - Permita agregar exámenes. 
+   - Calcule el promedio general de notas basado en todos los exámenes rendidos. 
+3. Escribir un ejemplo para probar el programa, donde: 
+   - Se cree un estudiante con nombre. 
+   - Se agreguen al menos dos exámenes con distintas notas. 
+   - Se imprima el promedio final del estudiante. 
+Consideraciones opcionales  
+- Manejar el caso en que el estudiante no tenga exámenes al calcular el promedio (evitar división por cero). 
+- Validar que la nota esté dentro del rango permitido (por ejemplo, entre 1.0 y 7.0). 
+- Agregar un método `mostrar_examenes()` que liste todos los exámenes rendidos con su tema y nota. 
+Autoevaluación sugerida 
+1. ¿Pudo implementar correctamente las clases con los métodos requeridos? 
+2. ¿La implementación considera posibles errores como listas vacías o notas inválidas? 
+3. ¿Probó el programa con varios estudiantes y exámenes distintos? 
+4. ¿Documentó adecuadamente el código con comentarios claros? 
