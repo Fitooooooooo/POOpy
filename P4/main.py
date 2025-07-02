@@ -21,7 +21,7 @@ class CuentaBancaria:
         """
         self.numero_cuenta = numero_cuenta
         self.saldo = saldo_inicial
-        self.historial_retiros: list[float] = [] # (Opcional) Para guardar el historial
+        self.historial_retiros: list[float] = []
 
     def retirar(self, monto: float) -> bool:
         """
@@ -35,7 +35,7 @@ class CuentaBancaria:
         """
         if monto > 0 and self.saldo >= monto:
             self.saldo -= monto
-            self.historial_retiros.append(monto) # (Opcional) Registrar el retiro
+            self.historial_retiros.append(monto)
             return True
         return False
 

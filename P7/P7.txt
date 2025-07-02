@@ -1,0 +1,24 @@
+Problema 7: Sistema de Pedidos de una Tienda 
+ 
+Una tienda desea implementar un sistema básico para registrar los pedidos que realizan los clientes. Cada 
+pedido puede contener uno o más productos. La tienda necesita llevar un registro de los productos agregados 
+a cada pedido y calcular el total a pagar. 
+Para ello, se desea modelar el sistema utilizando programación orientada a objetos. El sistema debe incluir al 
+menos lo siguiente: 
+Que el producto cuando sea creado, se incluyan los valores para el nombre del producto (cadena de texto) y 
+su precio (número real positivo). 
+Que el pedido considere una lista que almacene objetos productos que forman parte del pedido y que 
+permita agrega un producto a la lista de productos del pedido. Además, que permita conocer la suma total de 
+los precios de todos los productos del pedido. 
+Requerimientos 
+1. Implemente las clases respetando las especificaciones anteriores. 
+2. Cree un pedido nuevo y agregue al menos tres productos distintos con precios variados. 
+3. Muestre en pantalla el total del pedido utilizando el método correspondiente. 
+4. Asegúrese de aplicar correctamente los principios de encapsulamiento y uso de objetos en la solución. 
+5. Opcional: permita agregar productos utilizando datos ingresados por el usuario (input()), y muestra un 
+resumen del pedido indicando el nombre y precio de cada producto, seguido del total general. 
+Autoevaluación 
+- ¿He utilizado correctamente las clases y los objetos en mi solución? 
+- ¿He separado correctamente los datos (atributos) del comportamiento (métodos)? 
+- ¿He probado mi código con diferentes productos y verificado que el total es correcto? 
+- ¿Mi código es legible y está bien comentado? 

@@ -1,0 +1,18 @@
+Problema 10: Sistema de Empleados y Nómina 
+ 
+Una empresa desea automatizar el cálculo de la nómina mensual de sus empleados. Cada empleado recibe un 
+salario fijo mensual. 
+Requerimientos: 
+1. Para el empleado considerar el nombre del empleado, el salario base mensual del empleado. Además, que 
+permita calcular el pago, retornando el salario base mensual del empleado.  
+2. Para la gestión de la nómina considere las siguientes responsabilidades: 
+- Lista interna para almacenar empleados. 
+- Agregar un empleado a la nómina. 
+- Calcular y retorna la suma total de todos los salarios del mes. 
+Finalizada la solución del problema anterior, extenderlo para considerar bonos: 
+Implemente ahora la alternativa de considerar un bono como posible ingreso adicional, que se sume al 
+salario. Para ello, utilice el concepto de herencia. 
+Evaluación sugerida: 
+- ¿Pude implementar correctamente las clases con sus atributos y métodos? 
+- ¿Entendí la importancia del uso de herencia para extender funcionalidad? 
+- ¿Fui capaz de calcular correctamente la nómina total de empleados con y sin bono? 

@@ -1,0 +1,29 @@
+Problema 6: Agenda de Contactos 
+ 
+Un desarrollador está implementando un sistema de agenda digital para gestionar los contactos personales 
+de un usuario. Esta agenda permite almacenar contactos con su nombre y número telefónico, y ofrece la 
+funcionalidad de búsqueda por nombre. 
+ 
+Se pide implementar una solución utilizando programación orientada a objetos (POO), considerando los 
+siguientes requerimientos: 
+Requisitos del Modelo 
+1. Que el contacto considere: 
+  - nombre: cadena de texto 
+  - teléfono: cadena de texto 
+2. Que la agenda considere una lista de contactos y permita: 
+ - Agregar un contacto 
+  - Buscar un contacto por su nombre, de tal forma que retorne una lista con los teléfonos de los contactos 
+cuyo nombre coincide exactamente con el buscado. 
+Parte Obligatoria del Ejercicio 
+1. Implementar las clases y los métodos correspondientes. 
+2. La búsqueda debe ser exacta (sensible a mayúsculas y minúsculas). 
+3. Demostrar el funcionamiento con al menos tres contactos, de los cuales dos deben tener el mismo nombre. 
+Autoevaluación Sugerida 
+• ¿Implementó correctamente las clases y métodos requeridos? 
+• ¿Probó el programa con contactos repetidos? 
+• ¿La búsqueda funciona exactamente como se espera? 
+• ¿El código está bien organizado y documentado? 
+ 
+ 
+ 
+  

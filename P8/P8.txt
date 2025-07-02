@@ -1,0 +1,29 @@
+Problema 8: Sistema de Mensajería entre Usuarios 
+ 
+En esta actividad, se debe diseñar un sistema orientado a objetos que simule el envío y la recepción de 
+mensajes entre distintos usuarios. Cada usuario tendrá un nombre y un buzón de mensajes, donde se 
+almacenarán los mensajes recibidos con el nombre del remitente y el contenido del mensaje. 
+Requisitos del Programa 
+1. Crear usuarios que tengan el nombre del usuario (string) y un buzón con la lista de mensajes recibidos. 
+Además, que permita enviar un mensaje a otro usuario y leer todos los mensajes recibidos. 
+Ejemplo de Uso 
+A continuación se muestra un ejemplo del comportamiento esperado del programa: 
+ 
+u1 = Usuario("Alicia") 
+u2 = Usuario("Juan") 
+u3 = Usuario("Clara") 
+ 
+u1.enviar_mensaje(u2, "Hola Carlos, ¿cómo estás?") 
+u2.enviar_mensaje(u1, "Hola Alicia, todo bien. ¿Y tú?") 
+u3.enviar_mensaje(u1, "Alicia, ¿tienes un momento?") 
+u1.enviar_mensaje(u3, "Claro Clara, dime.") 
+ 
+print("Mensajes de Alicia:", u1.leer_mensajes()) 
+print("Mensajes de Juan:", u2.leer_mensajes()) 
+print("Mensajes de Clara:", u3.leer_mensajes()) 
+Autoevaluación 
+Responda las siguientes preguntas para reflexionar sobre su solución: 
+1. ¿Cómo se relacionan los objetos entre sí? ¿Qué tipo de asociación existe? 
+2. ¿Qué ventajas tiene separar la funcionalidad en métodos como enviar_mensaje y leer_mensajes? 
+3. ¿Sería posible extender este sistema para incluir respuestas a mensajes o mensajes con fecha? ¿Cómo 
+lo harías?

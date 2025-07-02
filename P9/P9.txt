@@ -1,0 +1,24 @@
+Problema 9: Sistema de Inventario de Productos 
+ 
+Se desea desarrollar un sistema básico de inventario para una tienda o almacén. El sistema debe permitir 
+registrar productos con su respectivo nombre y cantidad, gestionar el stock de cada producto cuando se 
+agregan nuevas unidades, y consultar cuántas unidades de un producto hay disponibles actualmente. 
+Para ello, se debe considerar lo siguiente: 
+1. Que el producto se identifique por su nombre (tipo str) y la cantidad disponible del producto (tipo int), que 
+se determinan cuando el producto es creado para ser ingresado al inventario. 
+2. Que el inventario contemple un diccionario cuyas claves son los nombres de los productos y cuyos valores 
+son los objetos correspondientes a los productos creados. Permitiendo agregar un producto, recibiendo un 
+objeto correspondiente a un producto; si el producto ya existe en el inventario (mismo nombre), debe sumar 
+la cantidad; de lo contrario, debe agregar el nuevo producto al diccionario. Y, que permita consultar el stock,  
+recibiendo un nombre de producto y devolviendo la cantidad disponible; si el producto no existe, debe 
+devolver 0. 
+Requisitos para la evaluación: 
+1. Implementar correctamente las clases según lo indicado. 
+2. Usar encapsulamiento apropiado si se considera necesario. 
+3. Comprobar el funcionamiento del método agregar_producto para casos repetidos y nuevos. 
+4. El método consultar_stock debe manejar correctamente productos inexistentes. 
+Autoevaluación sugerida: 
+- ¿Fui capaz de reutilizar una misma clase para representar varios productos? 
+- ¿Logré evitar duplicados en el inventario usando el nombre como clave? 
+- ¿Qué ocurriría si se agrega un producto con cantidad cero? 
+- ¿Qué mejoras propondría al diseño del sistema?
